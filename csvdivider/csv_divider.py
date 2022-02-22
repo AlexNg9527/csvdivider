@@ -1,25 +1,8 @@
 #!/usr/bin/env python
 
 import os
-import argparse
 
 from typing import List, Generator
-
-parser = argparse.ArgumentParser(description='Dividing CSV into separated CSVs.')
-
-parser.add_argument('lines', type=int,
-                    help='Insert a column of line numbers at the front of the output.')
-
-parser.add_argument('-i', '--input_file', dest='input_file',
-                    help='The CSV file to operate on. ')
-
-parser.add_argument('-o', '--output_path', dest='output_path', nargs='?',
-                    help='output folder')
-
-parser.add_argument('--head', dest='head_row', action=argparse.BooleanOptionalAction,
-                    help='with or without column names, default value: True')
-
-args = parser.parse_args()
 
 
 def divide_chunks(rows: List[str], slice_factor: int) -> Generator:
@@ -51,11 +34,3 @@ def csv_divider(input_file: str, lines: int, output_path: str = None, head_row: 
             sub_file.write(head)
             sub_file.writelines([s + '\n' for s in sub])
         print(path)
-
-
-def main():
-    csv_divider(**vars(args))
-
-
-if __name__ == '__main__':
-    main()
