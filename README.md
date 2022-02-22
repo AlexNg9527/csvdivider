@@ -2,6 +2,10 @@
 csvdivider is a command-line tools for dividing CSV into separated CSVs
 ## Example
 ```bash
+
+csvdivide xxx.csv 1000
+
+#more
 csvdivide -h
 usage: csvdivide [-h] [-i INPUT_FILE] [-o [OUTPUT_PATH]] [--head | --no-head] lines
 
