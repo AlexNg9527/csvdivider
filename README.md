@@ -1,5 +1,5 @@
 # csvdivider
-csvdivider is a command-line tools for dividing CSV into separated CSVs
+csvdivider is a command-line tool for dividing CSV into separated CSVs
 ## Example
 ```bash
 
