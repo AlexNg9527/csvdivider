@@ -2,7 +2,7 @@
 
 import os
 
-from typing import List, Generator
+from typing import List, Generator, Union
 
 
 def divide_chunks(rows: List[str], slice_factor: int) -> Generator:
@@ -10,10 +10,12 @@ def divide_chunks(rows: List[str], slice_factor: int) -> Generator:
         yield rows[i:i + slice_factor]
 
 
-def csv_divider(input_file: str, lines: int, output_path: str = None, head_row: bool = True):
+def csv_divider(input_file: str, lines: int, output_path:  Union[None, str] = None,
+                head_row: Union[None, bool] = True):
+
     folder_name = os.path.basename(input_file).split(".")[0]
     if output_path is None:
-        head_row = os.path.join(os.path.dirname(input_file), folder_name)
+        output_path = os.path.join(os.path.dirname(input_file), folder_name)
 
     # create output path if not exist
     if not os.path.exists(output_path):
