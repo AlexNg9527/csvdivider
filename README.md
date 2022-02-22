@@ -24,7 +24,7 @@ optional arguments:
 ```
 ## Installing threado and Supported Versions
 
-threado is available on PyPI:
+csvdivider is available on PyPI:
 
 ```console
 $ python -m pip install csvdivider
